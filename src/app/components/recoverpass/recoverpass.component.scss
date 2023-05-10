@@ -1,0 +1,140 @@
+.login {
+    max-width: 600px;
+    width: 100%;
+    margin: 1em auto;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+
+/* Reset top and bottom margins from certain elements */
+
+.login-header,
+.login p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+/* The triangle form is achieved by a CSS hack */
+
+.logo-image{
+    text-align: center;
+}    
+
+.logo-image img {
+    max-width: 100%;
+    height: auto;
+    width: 90%;
+  }
+
+.login-header {
+    background: #3498DB;
+    padding: 20px;
+    font-size: 1.4em;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.login-container {
+    background: #ebebeb;
+    padding: 10px;
+}
+
+
+
+/* Every row inside .login-container is defined with p tags */
+
+.login p {
+    padding: 6px;
+}
+
+.login button {
+    /* ... */
+    margin-top: 10px;
+}
+
+.login button {
+    /* ... */
+    border-radius: 5px;
+}
+
+.login button {
+    /* ... */
+    transition: background-color 0.2s ease-in-out;
+}
+
+.login button:hover {
+    background-color: #2c3e50;
+}
+.login input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    padding: 10%;
+    outline: 0;
+    font-family: inherit;
+    font-size: 0.95em;
+}
+
+.login button {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    padding: 10%;
+    outline: 0;
+    font-family: inherit;
+    font-size: 0.95em;
+}
+
+.login input[type="username"],
+.login input[type="password"] {
+    background: #fff;
+    border-color: #bbb;
+    color: #555;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+/* Text fields' focus effect */
+
+.login input[type="username"]:focus,
+.login input[type="password"]:focus {
+    border-color: #888;
+}
+
+.login button[type="submit"] {
+    background: #3498DB;
+    border-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    padding: 24px;
+}
+
+.login button[type="submit"]:hover {
+    background: rgb(6, 117, 75);
+}
+
+
+
+/* Buttons' focus effect */
+
+.login button[type="submit"]:focus {
+    border-color: rgb(6, 117, 75);
+}
+
+
+.ng-valid {
+    border: thin solid #090;
+}
+
+.ng-invalid {
+    border: thin solid #990000;
+}
