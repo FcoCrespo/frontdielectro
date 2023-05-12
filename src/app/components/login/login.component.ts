@@ -80,7 +80,7 @@ export class LoginComponent implements OnInit {
           }*/
           
           alert("Usuario correcto");
-          this.router.navigate(['/recoverpass']);
+          this.router.navigate(['/home']);
           //location.reload();
           //this.router.navigate(['/repos']);
         },

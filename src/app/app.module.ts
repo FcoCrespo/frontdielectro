@@ -9,13 +9,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RecoverpassComponent } from './components/recoverpass/recoverpass.component';
-
+import { HomeComponent } from './components/home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularMaterialModule } from './components/shared/angular-material/angular-material.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RecoverpassComponent
+    RecoverpassComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -24,9 +27,12 @@ import { RecoverpassComponent } from './components/recoverpass/recoverpass.compo
     LayoutModule,
     FormsModule,
     ReactiveFormsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
+    AngularMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
