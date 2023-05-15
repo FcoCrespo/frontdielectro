@@ -79,14 +79,26 @@ export class LoginComponent implements OnInit {
             }
           }*/
           
-          alert("Usuario correcto");
+          //alert("Usuario correcto");
           this.router.navigate(['/home']);
           //location.reload();
           //this.router.navigate(['/repos']);
         },
         error => {
           document.getElementById('botonAcceso')!.removeAttribute("disabled");
-          this.error = "Usuario no encontrado.";
+          alert("Usuario o contraseña incorrectos.");
+          const usernameField = document.getElementById('username');
+
+          if (usernameField instanceof HTMLInputElement) {
+            usernameField.value = '';
+            usernameField.focus();
+          }
+
+          const passField = document.getElementById('password');
+
+          if (passField instanceof HTMLInputElement) {
+            passField.value = '';
+          }
           this.loading = false;
         });
   }

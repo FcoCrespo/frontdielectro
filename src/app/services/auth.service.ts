@@ -27,7 +27,6 @@ export class AuthService {
         const params = new HttpParams()
             .set('username', username)
             .set('password', password);
-        //return this.http.get(`${environment.apiUrl}/usuarios`, { params : params })
         return this.http.get(`${environment.apiUrl}/users`, { params : params })
             .pipe(map(user => {
                 // almacena detalles del usuario y el token jwt en el almacenamiento local para mantener al usuario logueado entre refrescos de página

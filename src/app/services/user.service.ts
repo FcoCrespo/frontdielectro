@@ -38,7 +38,7 @@ export class UserService {
 
     recoverpassword(username: string, email: string) {
         const headers = new HttpHeaders().set('Access-Control-Allow-Origin', '*');
-        return this.http.get<any[]>(`${environment.apiUrl}/users/recoverpassword?username=${username}&email=${email}`);
+        return this.http.get(`${environment.apiUrl}/users/recoverpassword?username=${username}&email=${email}`, {responseType: 'text'});
     }
 
 }

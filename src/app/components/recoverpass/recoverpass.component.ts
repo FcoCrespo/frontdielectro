@@ -19,7 +19,7 @@ export class RecoverpassComponent implements OnInit {
   success!: string;
   isDesktop: boolean = false;
 
-  emailvalue: string="";
+  emailvalue: string = "";
 
   constructor(
     private formBuilder: FormBuilder,
@@ -35,7 +35,7 @@ export class RecoverpassComponent implements OnInit {
 
   ngOnInit() {
 
-   
+
 
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
@@ -53,8 +53,8 @@ export class RecoverpassComponent implements OnInit {
   get f() { return this.loginForm.controls; }
 
   onSubmit() {
-    var usernameinput= (<HTMLInputElement>document.getElementById('username')).value;
-    var emailinput= (<HTMLInputElement>document.getElementById('email')).value;
+    var usernameinput = (<HTMLInputElement>document.getElementById('username')).value;
+    var emailinput = (<HTMLInputElement>document.getElementById('email')).value;
 
     console.log(usernameinput + " " + emailinput)
     var strongRegex = new RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$");
@@ -64,43 +64,50 @@ export class RecoverpassComponent implements OnInit {
       || emailinput === ''
       || emailinput === undefined) {
 
-      
+
       alert("Algunos campos para recuperar tu contraseña estan vacíos.")
 
     }
 
-    else{
+    else {
 
-      if(strongRegex.test(emailinput)){
+      if (strongRegex.test(emailinput)) {
         document.getElementById('botonRecover')!.setAttribute("disabled", "disabled");
         this.submitted = true;
-  
+
         // resetea las alarmas al acceder
         this.error = "";
         this.success = "";
-  
-          this.userService.recoverpassword(this.f.username.value, this.f.email.value)
-            .subscribe(
-              data => {
-                
-          });
-          alert("Una nueva contraseña ha sido enviada a su correo.");
-          this.router.navigate(['/login']);
-        }
-      else{
+
+        this.userService.recoverpassword(this.f.username.value, this.f.email.value)
+          .subscribe(
+            data => {
+              console.log(data);
+              alert("Una nueva contraseña ha sido enviada al correo del usuario indicado.");
+              this.router.navigate(['/login']);
+            },
+            error=>{
+              alert("Una nueva contraseña ha sido enviada al correo del usuario indicado.");
+              this.router.navigate(['/login']);
+            }
+            
+          );
+
+      }
+      else {
         alert("El email proporcionado no se encuentra en el formato correcto (...@...)");
         this.emailvalue = '';
       }
     }
-      
-      
-  } 
 
-  GoToLogin(){
+
+  }
+
+  GoToLogin() {
     this.router.navigate(['/login']);
   }
 
 
-    
+
 
 }
