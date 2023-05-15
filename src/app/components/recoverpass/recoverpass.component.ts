@@ -65,7 +65,7 @@ export class RecoverpassComponent implements OnInit {
       || emailinput === undefined) {
 
       
-      alert("Some fields needed to recover your password are empty.")
+      alert("Algunos campos para recuperar tu contraseña estan vacíos.")
 
     }
 
@@ -84,11 +84,11 @@ export class RecoverpassComponent implements OnInit {
               data => {
                 
           });
-          alert("A new password has been send to your email.");
+          alert("Una nueva contraseña ha sido enviada a su correo.");
           this.router.navigate(['/login']);
         }
       else{
-        alert("The email is not in correct format (...@...)");
+        alert("El email proporcionado no se encuentra en el formato correcto (...@...)");
         this.emailvalue = '';
       }
     }
